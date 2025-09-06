@@ -47,85 +47,124 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
+    <!-- header section -->
     <header class="bg-indigo-100">
-     <div class="w-[1400px] mx-auto">
-         <div class="navbar ">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+      <div class="w-[1400px] mx-auto">
+        <div class="navbar">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
+                <li>
+                  <a href="" class="poppins-font font-semibold text-sm"
+                    ><i class="fa-solid fa-circle-question"></i>FAQ</a
+                  >
+                </li>
+                <li>
+                  <a href="" class="poppins-font font-semibold text-sm"
+                    ><i class="fa-solid fa-book-open"></i>learn</a
+                  >
+                </li>
+                <li class="">
+                  <a href="" class="poppins-font font-semibold text-sm"
+                    ><i class="fa-solid fa-right-from-bracket"></i>Logout</a
+                  >
+                </li>
+              </ul>
             </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 "
-            >
-               <li>
-              <a
-                href=""
-                class="poppins-font font-semibold text-sm "
-              ><i class="fa-solid fa-circle-question"></i>FAQ</a>
-            </li>
-            <li>
-              <a
-                href=""
-                class="poppins-font font-semibold text-sm "
-              ><i class="fa-solid fa-book-open"></i>learn</a>
-            </li>
-            <li class="">
-              <a
-                href=""
-                class="poppins-font font-semibold text-sm "
-              ><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
-            </li>
+            <a class="flex gap-1 justify-center items-center">
+              <span class="poppins-font font-semibold text-xl text-zinc-900"
+                >English</span
+              >
+              <img src="./assets/logo.png" />
+              <span class="tiro-bangla-font font-normal text-xl text-black"
+                >জানালা</span
+              >
+            </a>
+          </div>
+          <div class="navbar-end hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 space-x-4">
+              <li>
+                <a
+                  href=""
+                  class="poppins-font font-semibold text-sm btn btn-outline btn-primary"
+                  ><i class="fa-solid fa-circle-question"></i>FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="poppins-font font-semibold text-sm btn btn-outline btn-primary"
+                  ><i class="fa-solid fa-book-open"></i>learn</a
+                >
+              </li>
+              <li class="">
+                <a
+                  href=""
+                  class="poppins-font font-semibold text-sm btn btn-outline btn-primary"
+                  ><i class="fa-solid fa-right-from-bracket"></i>Logout</a
+                >
+              </li>
             </ul>
           </div>
-          <a class="flex gap-1 justify-center items-center">
-            <span class="poppins-font font-semibold text-xl text-zinc-900"
-              >English</span
-            >
-            <img src="./assets/logo.png" />
-            <span class="tiro-bangla-font font-normal text-xl text-black"
-              >জানালা</span
-            >
-          </a>
-        </div>
-        <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal px-1 space-x-4">
-            <li>
-              <a
-                href=""
-                class="poppins-font font-semibold text-sm btn btn-outline btn-primary"
-              ><i class="fa-solid fa-circle-question"></i>FAQ</a>
-            </li>
-            <li>
-              <a
-                href=""
-                class="poppins-font font-semibold text-sm btn btn-outline btn-primary"
-              ><i class="fa-solid fa-book-open"></i>learn</a>
-            </li>
-            <li class="">
-              <a
-                href=""
-                class="poppins-font font-semibold text-sm btn btn-outline btn-primary"
-              ><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
-            </li>
-          </ul>
         </div>
       </div>
-     </div>
     </header>
+
+    <!-- banner // hero section -->
+    <section class="md:w-[1380px] mx-auto w-96">
+      <div class="flex md:justify-between md:items-center  md:flex-row flex-col-reverse ">
+        <div class="  md:flex-1 md:text-left text-center">
+          <h1 class="poppins-font font-bold md:text-5xl text-3xl mb-6"><span class="text-blue-500">English </span> is Easy!!</h1>
+          <p class="hind-siliguri-font font-medium md:text-2xl text-lg text-zinc-900
+ mb-6">
+            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+            আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
+            অন্য একটি Level এ
+          </p>
+
+          <input type="text" class="input mb-4" placeholder="Enter Your Name" />
+          <br />
+          <label class="input validator mb-4">
+            <input
+              type="password"
+              required
+              placeholder=".................."
+              minlength="8"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+            />
+          </label>
+          <p class="validator-hint hidden">
+            Must be more than 8 characters, including
+            <br />At least one number <br />At least one lowercase letter
+            <br />At least one uppercase letter
+          </p>
+          <br />
+          <button class="btn btn-active btn-primary">Get Started</button>
+        </div>
+        <div class="md:flex-1 md:pr-0 pr-10">
+          <img src="./assets/hero-student.png" alt="" />
+        </div>
+      </div>
+    </section>
   </body>
 </html>
