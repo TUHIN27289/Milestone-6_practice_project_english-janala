@@ -10,6 +10,12 @@ loadLesson();
 
 // word section
 const loadWord = (id) => {
+     // Hide default message
+  const defaultMsg = document.getElementById("default-message");
+  if (defaultMsg) {
+    defaultMsg.style.display = "none";
+  }
+
   fetch(`https://openapi.programming-hero.com/api/level/${id}`)
     .then((res) => res.json())
     .then((dat) => {
@@ -24,16 +30,29 @@ const loadWord = (id) => {
 // "pronunciation": "ডিলিজেন্ট"
 const displayWord = (words) => {
   const wordContainer = document.getElementById("word-container");
+//   wordContainer.classList.remove("hidden");
   wordContainer.innerHTML = "";
+  if(words.length==0){
+    wordContainer.innerHTML = `
+    <div class="h-64 w-[1400px] flex justify-center items-center mx-auto">
+      <div class=" flex flex-col justify-center items-center text-center ">
+      <img class="mx-auto" src="./assets/alert-error.png">
+          
+          <p class="inter-font font-medium text-xl text-black mb-6 text-center" >এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+          <h1 class="hind-siliguri-font font-semibold text-2xl" >নেক্সট Lesson এ যান</h1>
+        </div>
+        </div>
+    `
+  }
   words.forEach((element) => {
     const wordDiv = document.createElement("div");
     wordDiv.innerHTML = `
         <div class="flex flex-col justify-center items-center w-[430px] h-96 bg-base-100 shadow-xl rounded-lg">
         <div class=" flex justify-center items-center ">
         <div class=" flex flex-col justify-center items-center text-center">
-          <h2 class="inter-font font-bold text-3xl text-black mb-6">${element.word}</h2>
+          <h2 class="inter-font font-bold text-3xl text-black mb-6">${element.word? element.word:'Word পাওয়া যায়নি'}</h2>
           <p class="inter-font font-medium text-xl text-black mb-6" >Meaning /Pronounciation</p>
-          <h1 class="hind-siliguri-font font-semibold text-2xl" >"${element.meaning } / ${ element.pronunciation}"</h1>
+          <h1 class="hind-siliguri-font font-semibold text-2xl" >"${element.meaning?element.meaning :'অর্থ পাওয়া যায়নি'} / ${ element.pronunciation?element.pronunciation :'Pronunciation পাওয়া যায়নি'}"</h1>
         </div>
         </div>
        <div>
@@ -46,18 +65,6 @@ const displayWord = (words) => {
     wordContainer.append(wordDiv);
   });
 
-  // const wordContainer=document.getElementById("word-container")
-  // wordContainer.innerHTML=""
-  // words.forEach(element => {
-  //     const wordDiv=document.createElement("div")
-  //     wordDiv.innerHTML=`<div class="card w-96 bg-base-100 shadow-xl">
-  //     <div class="card-body">
-  //       <h2 class="card-title">${element.level_no}</h2>
-  //       <p>${element.level_name}</p>
-  //     </div>
-  //   </div>`
-  //   wordContainer.append(wordDiv)
-  // });
 };
 
 // lesson section
