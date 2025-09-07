@@ -38,9 +38,12 @@
     />
 
     <!-- font inter  -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- tailwind and daisy UI cdn-->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
@@ -136,11 +139,16 @@
 
     <!-- banner // hero section -->
     <section class="md:w-[1380px] mx-auto w-96">
-      <div class="flex md:justify-between md:items-center  md:flex-row flex-col-reverse ">
-        <div class="  md:flex-1 md:text-left text-center">
-          <h1 class="poppins-font font-bold md:text-5xl text-3xl mb-6"><span class="text-blue-500">English </span> is Easy!!</h1>
-          <p class="hind-siliguri-font font-medium md:text-2xl text-lg text-zinc-900
- mb-6">
+      <div
+        class="flex md:justify-between md:items-center md:flex-row flex-col-reverse"
+      >
+        <div class="md:flex-1 md:text-left text-center">
+          <h1 class="poppins-font font-bold md:text-5xl text-3xl mb-6">
+            <span class="text-blue-500">English </span> is Easy!!
+          </h1>
+          <p
+            class="hind-siliguri-font font-medium md:text-2xl text-lg text-zinc-900 mb-6"
+          >
             আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
             আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
             অন্য একটি Level এ
@@ -172,52 +180,73 @@
       </div>
     </section>
     <!--  Learn Vocabularies -->
-      <section>
-        <h1 class="poppins-font font-bold md:text-3xl text-3xl mb-6 text-center"><span class="text-blue-500">Let's </span>  Learn Vocabularies</h1>
-        <div id="level-container" class="flex gap-5 justify-center flex-wrap"></div>
-      </section>
-      <!-- spiner -->
-       <section id="spiner-div" class="hidden">
-        <div  class="flex justify-center items-center mt-4">
-            <span class="loading loading-bars loading-xl"></span>
+    <section>
+      <h1 class="poppins-font font-bold md:text-3xl text-3xl mb-6 text-center">
+        <span class="text-blue-500">Let's </span> Learn Vocabularies
+      </h1>
+      <div
+        id="level-container"
+        class="flex gap-5 justify-center flex-wrap"
+      ></div>
+    </section>
+    <!-- search -->
+    <section class="mt-10 flex justify-center items-center">
+      <div class="join ">
+        <div>
+          <label class="input validator join-item">
+            <input id="search-input" type="email" placeholder="search Vocabularies" required />
+          </label>
         </div>
-       </section>
-      <!-- word-lists section -->
-       <section>
-        <div id="word-container"  class=" w-11/12 bg-gray-100 mx-auto my-10  grid md:grid-cols-3 grid-cols-1 justify-around pl-4 pt-4 gap-4">
-        </div>
-        <div id="default-message" class= " bg-gray-100 w-11/12 mx-auto text-center p-16 rounded-lg mt-10">
-            <P class="hind-siliguri-font font-normal text-sm text-stone-500 mb-3">আপনি এখনো কোন Lesson Select করেন নি</P>
-            <h1 class="hind-siliguri-font  font-medium text-3xl text-zinc-900 ">একটি Lesson Select করুন।</h1>
-
-        </div>
-       </section>
-       <!-- Open the modal using ID.showModal() method -->
-<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
- <!-- <section id="word-spiner" class="hidden">
+        <button id="search-btn" class="btn btn-primary join-item">Join</button>
+      </div>
+    </section>
+    <!-- spiner -->
+    <section id="spiner-div" class="hidden">
+      <div class="flex justify-center items-center mt-4">
+        <span class="loading loading-bars loading-xl"></span>
+      </div>
+    </section>
+    <!-- word-lists section -->
+    <section>
+      <div
+        id="word-container"
+        class="w-11/12 bg-gray-100 mx-auto my-10 grid md:grid-cols-3 grid-cols-1 justify-around pl-4 pt-4 gap-4"
+      ></div>
+      <div
+        id="default-message"
+        class="bg-gray-100 w-11/12 mx-auto text-center p-16 rounded-lg mt-10"
+      >
+        <p class="hind-siliguri-font font-normal text-sm text-stone-500 mb-3">
+          আপনি এখনো কোন Lesson Select করেন নি
+        </p>
+        <h1 class="hind-siliguri-font font-medium text-3xl text-zinc-900">
+          একটি Lesson Select করুন।
+        </h1>
+      </div>
+    </section>
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+    <!-- <section id="word-spiner" class="hidden">
     <div class="flex justify-center item">
         <span class="loading loading-bars loading-xl"></span>
     </div>
  </section> -->
-<dialog id="word_modal" class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box">
-
-    <div id="word-spiner" class="hidden">
-    <div class="flex justify-center item">
-        <span class="loading loading-bars loading-xl"></span>
-    </div>
- </div>
-    <div id="word-details-container">
-
-    </div>
-    <div class="modal-action">
-      <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
-        <button class="btn">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
-      <script src="./script/index.js"></script>
+    <dialog id="word_modal" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <div id="word-spiner" class="hidden">
+          <div class="flex justify-center item">
+            <span class="loading loading-bars loading-xl"></span>
+          </div>
+        </div>
+        <div id="word-details-container"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+    <script src="./script/index.js"></script>
   </body>
 </html>

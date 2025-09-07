@@ -43,7 +43,38 @@ const loadLesson = () => {
 
 
 
+//  search functionality
+document.getElementById('search-btn').addEventListener('click',function(e){
+    e.preventDefault();
+    removeActive()
+    // console.log('search button clicked');
+    const input=document.getElementById('search-input').value.trim().toLowerCase();
+    // console.log(input)
+    // Fetching all word
+    fetch('https://openapi.programming-hero.com/api/words/all')
+   .then(res=>res.json())
+   .then(dat=>{
+    const words=dat.data;
+    // console.log(words)
+    const matchedWords=words.filter(word=>word.word.toLowerCase().includes(input))
+     displayWord(matchedWords)
+   })
+   })
+
+
+    // fetch('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+    // .then(res=>res.json())
+    // .then(dat=>{
+    //     const words=dat.data;
+    //     // console.log(words)
+    //     const matchedWords=words.filter(word=>word.word.toLowerCase().includes(input))
+    //     // console.log(matchedWords)
+    //     displaySearchResult(matchedWords)
+    // })
+
+
 // word section
+
 const loadWord = (id) => {
      
   // Hide default message
@@ -191,4 +222,5 @@ const displayLesson = (lessons) => {
     levelContainer.append(levelDiv);
   });
 };
+
 loadLesson();
