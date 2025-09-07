@@ -7,6 +7,12 @@ const createElements = (arr) => {
   return htmlElements.join(" ");
 };
 
+// pronounce word
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
 
 //  spiner
 const spinerManager = (status) => {
@@ -142,7 +148,7 @@ const displayWord = (words) => {
         <div class="flex justify-between items-center space-x-44 my-16">
          <button onclick="loadWordDetail(${
            element.id
-         })" class="fa-solid fa-circle-info bg-[#1A91FF] opacity-70 text-black p-2 pr-7 rounded-lg"> </button> <button onclick="my_modal_5.showModal()" class="fa-solid fa-volume-high bg-[#1A91FF] opacity-70 text-black p-2 pr-7 rounded-lg"></button>
+         })" class="fa-solid fa-circle-info bg-[#1A91FF] opacity-70 text-black p-2 pr-7 rounded-lg"> </button> <button onclick="pronounceWord('${element.word}')" class="fa-solid fa-volume-high bg-[#1A91FF] opacity-70 text-black p-2 pr-7 rounded-lg"></button>
         </div>
        </div>
       </div>`;
