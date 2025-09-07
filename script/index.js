@@ -18,7 +18,18 @@ const spinerManager = (status) => {
     document.getElementById("spiner-div").classList.add("hidden");
   }
 };
-//
+// word detail mange spiner
+
+const spinerWordDetail=(status)=>{
+    if(status==true){
+        document.getElementById("word-spiner").classList.remove('hidden')
+        document.getElementById("word-details-container").classList.add('hidden')
+    }
+    else{
+        document.getElementById("word-details-container").classList.remove('hidden')
+        document.getElementById("word-spiner").classList.add('hidden')
+    }
+}
 
 const loadLesson = () => {
   fetch("https://openapi.programming-hero.com/api/levels/all")
@@ -125,6 +136,8 @@ const removeActive = () => {
   });
 };
 const loadWordDetail = async (id) => {
+    document.getElementById("word_modal").showModal();
+    spinerWordDetail(true)
   const url = `https://openapi.programming-hero.com/api/word/${id}`;
   const res = await fetch(url);
   const dat = await res.json();
@@ -132,6 +145,7 @@ const loadWordDetail = async (id) => {
 };
 
 const displayWordDetail = (word) => {
+    
   // console.log(word)
   const wordDetailsContainer = document.getElementById(
     "word-details-container"
@@ -152,8 +166,11 @@ const displayWordDetail = (word) => {
 
     </div>
 
-    `;
-  document.getElementById("word_modal").showModal();
+    `
+    spinerWordDetail(false)
+    ;
+//   document.getElementById("word_modal").showModal();
+  
 };
 // lesson section
 const displayLesson = (lessons) => {
