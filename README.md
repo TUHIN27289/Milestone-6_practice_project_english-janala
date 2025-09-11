@@ -112,5 +112,7 @@ function pronounceWord(word) {
 For More >> you can explore this implementation 👉 [https://codepen.io/Ferdous-Zihad/pen/PwoJMmJ](https://codepen.io/Ferdous-Zihad/pen/PwoJMmJ)
 
 ---
+###
+live link-->https://tuhin27289.github.io/Milestone-6_practice_project_english-janala/
 Bonus : How to create Private Repository for next assignments
 ## Test Repo - :  https://classroom.github.com/a/Fgjib-lr
